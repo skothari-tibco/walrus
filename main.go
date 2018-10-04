@@ -1,6 +1,8 @@
 package walrus
 
 import (
+	"fmt"
+
 	log "github.com/sirupsen/logrus"
 	"github.com/skothari-tibco/registry"
 	"github.com/spf13/cobra"
@@ -25,4 +27,15 @@ var helloCmd = &cobra.Command{
 
 func init() {
 	registry.RegisterCmd(helloCmd)
+
+	helloCmd.AddCommand(sayCmd)
+}
+
+var sayCmd = &cobra.Command{
+	Use:   "say",
+	Short: "says walrus",
+	Long:  `This subcommand says walrus`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("This is sub command")
+	},
 }
