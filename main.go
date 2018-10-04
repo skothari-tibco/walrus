@@ -2,6 +2,7 @@ package walrus
 
 import (
 	log "github.com/sirupsen/logrus"
+	"github.com/spf13/cobra"
 )
 
 func GetWalrus() {
@@ -10,4 +11,17 @@ func GetWalrus() {
 	log.WithFields(log.Fields{
 		"animal": "walrus",
 	}).Info("A walrus appears")
+}
+
+var helloCmd = &cobra.Command{
+	Use:   "walrus",
+	Short: "says walrus",
+	Long:  `This subcommand says walrus`,
+	Run: func(cmd *cobra.Command, args []string) {
+		GetWalrus()
+	},
+}
+
+func init() {
+	Rootcmd.AddCommand(helloCmd)
 }
