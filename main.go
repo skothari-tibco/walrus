@@ -1,4 +1,4 @@
-package walrus
+package cmd
 
 import (
 	log "github.com/sirupsen/logrus"
@@ -23,5 +23,5 @@ var helloCmd = &cobra.Command{
 }
 
 func init() {
-	Rootcmd.AddCommand(helloCmd)
+	RootCmd.AddCommand(helloCmd)
 }
