@@ -1,4 +1,4 @@
-package cmd
+package walrus
 
 import (
 	log "github.com/sirupsen/logrus"
