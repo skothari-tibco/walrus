@@ -2,6 +2,7 @@ package cmd
 
 import (
 	log "github.com/sirupsen/logrus"
+	"github.com/skothari-tibco/registry"
 	"github.com/spf13/cobra"
 )
 
@@ -23,5 +24,5 @@ var helloCmd = &cobra.Command{
 }
 
 func init() {
-	RootCmd.AddCommand(helloCmd)
+	registry.RegisterCmd(helloCmd)
 }
