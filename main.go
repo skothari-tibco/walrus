@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/skothari-tibco/registry"
+	"github.com/skothari-tibco/newCli/registry"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +26,7 @@ var helloCmd = &cobra.Command{
 }
 
 func init() {
-	registry.RegisterCmd(helloCmd)
+	registry.RegisterCommands(helloCmd)
 
 	helloCmd.AddCommand(sayCmd)
 }
