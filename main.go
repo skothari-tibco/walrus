@@ -17,9 +17,10 @@ func GetWalrus() {
 }
 
 var helloCmd = &cobra.Command{
-	Use:   "walrus",
-	Short: "says walrus",
-	Long:  `This subcommand says walrus`,
+	Use:              "walrus",
+	Short:            "says walrus",
+	Long:             `This subcommand says walrus`,
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {},
 	Run: func(cmd *cobra.Command, args []string) {
 		GetWalrus()
 	},
