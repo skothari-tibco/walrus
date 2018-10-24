@@ -3,8 +3,8 @@ package walrus
 import (
 	"fmt"
 
-	log "github.com/sirupsen/logrus"
 	"github.com/project-flogo/cli/common"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +26,7 @@ var helloCmd = &cobra.Command{
 }
 
 func init() {
-	registry.RegisterCommands(helloCmd)
+	common.RegisterPlugin(helloCmd)
 
 	helloCmd.AddCommand(sayCmd)
 }
