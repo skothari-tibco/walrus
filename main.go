@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/project-flogo/cli/registry"
+	"github.com/project-flogo/cli/common"
 	"github.com/spf13/cobra"
 )
 
